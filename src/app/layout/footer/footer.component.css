@@ -1,0 +1,253 @@
+/* Container styling */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px; /* Increased border-radius */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease-in-out;
+
+}
+.malav{
+    border-radius: 15px; /* Increased border-radius */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Parallax effect */
+.image-container img {
+    object-fit: cover; /* Ensure image fills the container without distorting */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease-out;
+    border-radius: 20px; /* Smooth edges */
+}
+
+.image-container:hover img {
+    transform: translateY(-12px);
+}
+
+/* Card */
+.relative-card {
+    max-width: 60%; /* Card takes max 60% of container width */
+    margin: 0 auto; /* Center the card */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+}
+
+/* Buttons and Text */
+.btn-outline-primary {
+    border-color: #3498db;
+    color: #3498db;
+    font-weight: bold;
+    padding: 0.8rem 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Text Effects */
+h2 {
+    transition: all 0.3s ease;
+}
+
+h2:hover {
+    color: #3498db;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+.text-primary {
+    color: #3498db;
+}
+
+.text-dark {
+    color: #333;
+}
+
+/* Animated Button */
+/* Adjust button size */
+.animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reduced gap */
+    padding: 12px 24px; /* Smaller padding */
+    border: 3px solid transparent;
+    font-size: 14px; /* Smaller font size */
+    font-weight: bold;
+    color: #1f387e;
+    border-radius: 50px;
+    background-color: transparent;
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Center the button in the left column */
+.col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Align items center horizontally */
+    text-align: center; /* Center text */
+}
+
+/* Optional: Add some margin to adjust vertical spacing */
+.animated-button {
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #1f387e;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+    right: 16px;
+}
+
+.animated-button .arr-2 {
+    left: -25%;
+}
+
+.animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #c5e5e4;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+    right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+    left: 16px;
+}
+
+.animated-button:hover .text {
+    transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+    fill: #1f387e;
+}
+
+.animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+}
+
+.relative-card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+/* Light Theme Footer Styling */
+.footer {
+    margin-top: 30px;
+    background: #ffffff; /* White background for light theme */
+    color: #333333; /* Dark text for better readability */
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.footer .text-primary {
+    color: #3498db; /* Primary color for links and text */
+}
+
+.footer h4, .footer h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.footer .text-gray-700 {
+    color: #4a4a4a; /* Soft gray for text */
+    transition: color 0.3s ease;
+}
+
+.footer .text-gray-700:hover {
+    color: #3498db; /* Change to primary color on hover */
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer .fab {
+    font-size: 30px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .fab:hover {
+    transform: scale(1.2); /* Slight scale on hover */
+    color: #3498db; /* Change icon color to primary on hover */
+}
+
+.footer .d-flex {
+    gap: 1rem;
+}
+
+.footer .border-t {
+    border-top: 2px solid rgba(0, 0, 0, 0.1); /* Light border on top for separation */
+}
+
+/* Bottom Footer Text */
+.footer .text-center {
+    margin-top: 2rem;
+    opacity: 0.7;
+}
+
+/* Hover effects for social media */
+.footer .fab:hover {
+    color: #3498db; /* Change icon color to primary on hover */
+    transform: scale(1.2);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 767px) {
+    .footer .row {
+        text-align: center;
+    }
+
+    .footer .col-lg-4,
+    .footer .col-lg-3 {
+        margin-bottom: 2rem;
+    }
+}
