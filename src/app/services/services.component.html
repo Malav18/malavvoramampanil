@@ -1,0 +1,19 @@
+<section class="services-container">
+    <div class="container">
+      <h2 class="text-center section-title">Our Services</h2>
+      <p class="text-center section-subtitle">We offer high-quality services to help grow your business.</p>
+      
+      <div class="row">
+        <div *ngFor="let service of services" class="col-md-4">
+          <div class="service-card" [style.border-color]="service.color">
+            <div class="icon" [style.color]="service.color">
+              <i [class]="service.icon"></i>
+            </div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

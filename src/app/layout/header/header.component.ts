@@ -1,35 +1,30 @@
 import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { NgxTypedJsModule } from 'ngx-typed-js';
+
+import { NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgxTypedJsModule],
+  imports: [NgxTypedJsModule,RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  constructor() {}
+  activeRoute: string = '';
 
-  ngOnInit(): void {
-    
+  constructor(private router: Router) {
+    debugger
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.activeRoute = event.urlAfterRedirects;
+      }
+    });
   }
 
-  setupMenuToggle() {
-    const navMenu = document.getElementById('nav-menu');
-    const navToggle = document.getElementById('nav-toggle');
-    const navClose = document.getElementById('nav-close');
-
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navMenu?.classList.add('show-menu');
-      });
-    }
-
-    if (navClose) {
-      navClose.addEventListener('click', () => {
-        navMenu?.classList.remove('show-menu');
-      });
-    }
+  isActive(route: string): boolean {
+    return this.activeRoute.includes(route);
   }
+  
 }

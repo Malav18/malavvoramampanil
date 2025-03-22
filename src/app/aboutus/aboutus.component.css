@@ -1,0 +1,330 @@
+/* Main About Us Container */
+.about-container {
+    background-color: #f8f9fa;
+    padding: 80px 20px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title:after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Business Overview */
+.business-overview {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.business-overview .icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.business-overview h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.business-overview p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Project Cards */
+.project-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card .project-info {
+    padding: 20px;
+}
+
+.project-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Hover Effect for Project Cards */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Business Stats */
+.business-stats {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.business-stats h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stats-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.stats-card .icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.stats-card h4 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.stats-card p {
+    font-size: 18px;
+    color: #555;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .stats-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+    }
+}
+
+/* Main About Us Container */
+.about-container {
+    background-color: #f8f9fa;
+    padding: 80px 20px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title:after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Completed Projects Section */
+.completed-projects {
+    margin-bottom: 50px;
+}
+
+.project-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card .project-info {
+    padding: 20px;
+}
+
+.project-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #777;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Business Stats Section */
+.business-stats {
+    margin-top: 50px;
+    padding-bottom: 40px;
+}
+
+.business-stats h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.stats-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.stats-card .icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.stats-card h4 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.stats-card p {
+    font-size: 18px;
+    color: #555;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .completed-projects .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+    }
+}

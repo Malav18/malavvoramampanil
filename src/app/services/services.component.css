@@ -1,0 +1,102 @@
+/* Main Container */
+.services-container {
+    padding: 80px 20px;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    border-radius: 10px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background-color: #007bff;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+/* Section Subtitle */
+.section-subtitle {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Service Card */
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border-bottom: 4px solid #007bff;
+    margin-bottom: 30px;
+}
+
+.service-card .icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #007bff;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Hover Effect */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background-color: #f0f8ff;
+    border-bottom: 4px solid #0056b3;
+}
+
+.service-card:hover .icon {
+    transform: scale(1.2);
+    color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-card {
+        margin-bottom: 20px;
+        padding: 25px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+    }
+
+    .service-card .icon {
+        font-size: 40px;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+}

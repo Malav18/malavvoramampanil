@@ -149,3 +149,32 @@
     color: #010101; 
     font-weight: bold;
   }
+  .navbar {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.active {
+    background-color: #343a40 !important; 
+    color: #ffffff !important;
+    border-radius: 5px; 
+    padding: 8px 15px; 
+    font-weight: bold; 
+    box-shadow: 0px 4px 10px rgba(157, 141, 141, 0.2);
+    transition: all 0.3s ease-in-out; 
+}
+
+.active:hover {
+    background-color: #484f55 !important; 
+    transform: scale(1.05);
+}
+
+/* Make other links stand out */
+.nav-link {
+   /* Default black text */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.nav-link:hover {
+
+    text-decoration: underline; /* Underline effect */
+}
