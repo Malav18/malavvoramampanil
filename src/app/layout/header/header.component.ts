@@ -15,7 +15,6 @@ export class HeaderComponent {
   activeRoute: string = '';
 
   constructor(private router: Router) {
-    debugger
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.activeRoute = event.urlAfterRedirects;
