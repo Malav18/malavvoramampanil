@@ -2,36 +2,37 @@
 <div class="loader-overlay" *ngIf="isLoading">
     <div class="loader"></div>
   </div>
-<section class="relative bg-transparent pt-20 -mt-64 md:-mt-80 mb-[-7rem] md:mb-[-10rem] z-10">
+  <section class="relative bg-transparent pt-20 -mt-64 md:-mt-80 mb-[-7rem] md:mb-[-10rem] z-10">
     <div class="container px-4 sm:px-6 lg:px-8">
         <div class="relative malav overflow-hidden bg-light rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out">
-            <div class="row  align-items-center justify-content-center">
+            <div class="row align-items-center justify-content-center flex-wrap-reverse md:flex-nowrap">
                 
-                <!-- Left Column: Enhanced Content -->
-                <div class="col-md-6 content-box">
-                    <h2><i class="fas fa-lightbulb"></i> Build Your Dream Project</h2>
-                    <p><i class="fas fa-check-circle text-primary"></i> Have a great idea? We’ll help you bring it to life with creativity and expertise.</p>
-                    <button class="animated-button" (click)="openModal(content)">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
-                        </svg>
-                        &nbsp; <span class="text">GET STARTED </span>&nbsp;
-                        <span class="circle"></span>
+                <!-- Left Column: Content -->
+                <div class="col-md-6 content-box text-center md:text-left">
+                    <h2 class="text-lg sm:text-2xl font-bold">
+                        <i class="fas fa-lightbulb"></i> Build Your Dream Project
+                    </h2>
+                    <p class="text-dark text-sm sm:text-lg m-3">
+                        <i class="fas fa-check-circle text-primary"></i> Have a great idea? We’ll help you bring it to life with creativity and expertise.
+                    </p>
+                    <button class="animated-button mt-4 sm:mt-6" (click)="openModal(content)">
+                        <span class="text">START YOUR JOURNEY</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                        </svg>
+                        <span class="circle"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                         </svg>
                     </button>
                 </div>
 
-                <!-- Right Column with Image -->
-                <div class="col-md-6 relative">
+                <!-- Right Column: Image -->
+                <div class="col-md-6 relative flex justify-center">
                     <div class="relative-card">
                         <div class="image-container">
-                            <img id="malav" src="https://threedio-prod-var-cdn.icons8.com/yv/preview_sets/previews/uc2YRxURhBAfnp9z.webp" alt="Team working on project">
+                            <img  src="https://threedio-prod-var-cdn.icons8.com/yv/preview_sets/previews/uc2YRxURhBAfnp9z.webp" 
+                                 alt="Team working on project" >
                         </div>
                     </div>
                 </div>
@@ -40,6 +41,8 @@
         </div>
     </div>
 </section>
+
+
 
 
 <section class="footer bg-white text-dark pt-16 pb-10 shadow-md">
@@ -93,25 +96,29 @@
 <ng-template #content let-modal>
     <div class="modal-header">
         <h4 class="modal-title">Enter Your Details</h4>
-        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">   <i class="fas fa-times"></i></button>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="fas fa-times"></i>
+        </button>
     </div>
 
     <div class="modal-body">
         <form [formGroup]="userForm" (ngSubmit)="sendEmail(modal)">
             <!-- Full Name -->
             <div class="form-group">
-                <label><i class="fas fa-user"></i> Full Name <span class="text-danger">*</span></label>
+                <label><i class="fas fa-user"></i>&nbsp; Full Name <span class="text-danger">*</span></label>
                 <input type="text" formControlName="fullName" class="form-control"
-                       [ngClass]="{'is-invalid': isFieldInvalid('fullName')}" />
+                       [ngClass]="{'is-invalid': isFieldInvalid('fullName')}" placeholder="Enter your full name" />
                 <div *ngIf="isFieldInvalid('fullName')" class="invalid-feedback">
                     <small *ngIf="userForm.controls['fullName'].errors?.['required']">Full Name is required.</small>
                     <small *ngIf="userForm.controls['fullName'].errors?.['minlength']">Minimum 3 characters required.</small>
                 </div>
             </div>
+
+            <!-- Company Name -->
             <div class="form-group">
-                <label><i class="fas fa-building"></i> Company Name </label>
+                <label><i class="fas fa-building"></i>&nbsp; Company Name</label>
                 <input type="text" formControlName="companyName" class="form-control"
-                       [ngClass]="{'is-invalid': isFieldInvalid('companyName')}" />
+                       [ngClass]="{'is-invalid': isFieldInvalid('companyName')}" placeholder="Enter your company name" />
                 <div *ngIf="isFieldInvalid('companyName')" class="invalid-feedback">
                     <small *ngIf="userForm.controls['companyName'].errors?.['minlength']">Company Name must be at least 3 characters long.</small>
                 </div>
@@ -119,9 +126,9 @@
 
             <!-- Mobile No -->
             <div class="form-group">
-                <label><i class="fas fa-phone"></i> Mobile No <span class="text-danger">*</span></label>
+                <label><i class="fas fa-phone"></i>&nbsp; Mobile No <span class="text-danger">*</span></label>
                 <input type="text" formControlName="mobileNo" class="form-control"
-                       [ngClass]="{'is-invalid': isFieldInvalid('mobileNo')}" />
+                       [ngClass]="{'is-invalid': isFieldInvalid('mobileNo')}" placeholder="Enter your mobile number" />
                 <div *ngIf="isFieldInvalid('mobileNo')" class="invalid-feedback">
                     <small *ngIf="userForm.controls['mobileNo'].errors?.['required']">Mobile No is required.</small>
                     <small *ngIf="userForm.controls['mobileNo'].errors?.['pattern']">Enter a valid 10-digit number.</small>
@@ -130,9 +137,9 @@
 
             <!-- District -->
             <div class="form-group">
-                <label><i class="fas fa-map-marker-alt"></i> District <span class="text-danger">*</span></label>
+                <label><i class="fas fa-map-marker-alt"></i>&nbsp; District <span class="text-danger">*</span></label>
                 <input type="text" formControlName="district" class="form-control"
-                       [ngClass]="{'is-invalid': isFieldInvalid('district')}" />
+                       [ngClass]="{'is-invalid': isFieldInvalid('district')}" placeholder="Enter your district" />
                 <div *ngIf="isFieldInvalid('district')" class="invalid-feedback">
                     <small>District is required.</small>
                 </div>
@@ -140,9 +147,9 @@
 
             <!-- Email ID -->
             <div class="form-group">
-                <label><i class="fas fa-envelope"></i> Email ID <span class="text-danger">*</span></label>
+                <label><i class="fas fa-envelope"></i>&nbsp; Email ID <span class="text-danger">*</span></label>
                 <input type="email" formControlName="email" class="form-control"
-                       [ngClass]="{'is-invalid': isFieldInvalid('email')}" />
+                       [ngClass]="{'is-invalid': isFieldInvalid('email')}" placeholder="Enter your email" />
                 <div *ngIf="isFieldInvalid('email')" class="invalid-feedback">
                     <small *ngIf="userForm.controls['email'].errors?.['required']">Email is required.</small>
                     <small *ngIf="userForm.controls['email'].errors?.['email']">Enter a valid email address.</small>
@@ -151,12 +158,9 @@
 
             <!-- Description -->
             <div class="form-group">
-                <label><i class="fas fa-comment"></i> Description </label>
+                <label><i class="fas fa-comment"></i>&nbsp; Description</label>
                 <textarea formControlName="description" class="form-control" rows="3"
-                          [ngClass]="{'is-invalid': isFieldInvalid('description')}"></textarea>
-                <!-- <div *ngIf="isFieldInvalid('description')" class="invalid-feedback">
-                    <small>Description is required.</small>
-                </div> -->
+                          [ngClass]="{'is-invalid': isFieldInvalid('description')}" placeholder="Describe your query or feedback"></textarea>
             </div>
 
             <!-- Submit Button -->
@@ -166,3 +170,4 @@
         </form>
     </div>
 </ng-template>
+

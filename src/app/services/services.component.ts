@@ -34,7 +34,7 @@ export class ServicesComponent implements OnInit {
       { 
         "id": 3, 
         "title": "Digital Marketing", 
-        "description": "SEO, social media marketing, and PPC advertising.asdasdjklk", 
+        "description": "SEO, social media marketing,  PPC advertising and many more.", 
         "icon": "fas fa-bullhorn", 
         "color": "#ffc107"
       },
@@ -54,8 +54,8 @@ export class ServicesComponent implements OnInit {
       },
         { 
           "id": 6, 
-          "title": "Mobile App Development", 
-          "description": "Android & iOS app development with great user experience.", 
+          "title": "Quality ansurance",
+          "description": "Comprehensive testing services for web and mobile apps.", 
           "icon": "fas fa-mobile-alt", 
           "color": "#28a745"
         },

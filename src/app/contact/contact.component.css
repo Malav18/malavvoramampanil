@@ -2,9 +2,9 @@
 .contact-container {
     display: flex;
     justify-content: center;
-   
-    
-   
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
 }
 
 /* Card Layout */
@@ -12,10 +12,12 @@
     max-width: 83%;
     width: 100%;
     border-radius: 15px;
-   
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     padding: 50px;
+    background: white;
+    opacity: 0;
+    animation: fadeInUp 1.2s forwards;
 }
 
 .relative-card:hover {
@@ -29,12 +31,22 @@
     width: 100%;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeInUp 1.4s forwards;
+}
+
+#map:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* Contact Info Styling */
 .contact-info {
     text-align: left;
     padding: 30px;
+    opacity: 0;
+    animation: fadeInUp 1.6s forwards;
 }
 
 .contact-info h2 {
@@ -45,6 +57,7 @@
     border-bottom: 3px solid #007bff;
     display: inline-block;
     padding-bottom: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 .contact-info p {
@@ -56,8 +69,8 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.contact-info strong {
-    color: #222;
+.contact-info p:hover {
+    transform: translateX(5px);
 }
 
 /* FontAwesome Icons */
@@ -65,7 +78,7 @@
     font-size: 22px;
     margin-right: 15px;
     color: #007bff;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .contact-info p:hover i {
@@ -117,10 +130,14 @@
         justify-content: center;
     }
 }
+
 /* Main About Us Container */
 .about-container {
     background-color: #f8f9fa;
     padding: 80px 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s forwards;
 }
 
 /* Section Title */
@@ -133,6 +150,8 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
+    opacity: 0;
+    animation: fadeInUp 1.3s forwards;
 }
 
 .section-title:after {
@@ -151,4 +170,32 @@
     color: #666;
     text-align: center;
     margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hover Effects */
+.contact-info h2:hover {
+    color: #0056b3;
+    border-bottom-color: #ff5733;
+    transform: scale(1.05);
 }

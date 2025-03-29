@@ -1,26 +1,31 @@
 /* Main Container */
 .services-container {
     padding: 80px 20px;
-    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    background: linear-gradient(to right, #ffffff, #f8f9fa);
     border-radius: 10px;
+    overflow: hidden;
+    position: relative;
 }
 
 /* Section Title */
 .section-title {
     font-size: 40px;
     font-weight: 700;
-    color: #333;
+    color: #222;
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s forwards;
 }
 
 .section-title:after {
     content: "";
     position: absolute;
-    width: 50px;
+    width: 60px;
     height: 4px;
     background-color: #007bff;
     left: 50%;
@@ -34,6 +39,9 @@
     color: #666;
     text-align: center;
     margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1.2s forwards;
 }
 
 /* Service Card */
@@ -43,18 +51,39 @@
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    border-bottom: 4px solid #007bff;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 4px solid transparent;
     margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s forwards;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Add glowing border effect */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border-bottom: 4px solid #007bff;
+    background: #f0f8ff;
+}
+
+.service-card:hover .icon {
+    transform: scale(1.2);
+    color: #0056b3;
+}
+
+/* Icon Style */
 .service-card .icon {
     font-size: 50px;
     margin-bottom: 20px;
     color: #007bff;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
+/* Service Title */
 .service-card h3 {
     font-size: 24px;
     font-weight: 600;
@@ -62,23 +91,81 @@
     color: #333;
 }
 
+/* Service Description */
 .service-card p {
     font-size: 16px;
     color: #555;
     line-height: 1.5;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Hover Effect */
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-    background-color: #f0f8ff;
-    border-bottom: 4px solid #0056b3;
+/* Button */
+.service-card .read-more {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #fff;
+    background: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
 }
 
-.service-card:hover .icon {
-    transform: scale(1.2);
-    color: #0056b3;
+.service-card .read-more:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Glow Effect */
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+    top: -50%;
+    left: -50%;
+    animation: glowEffect 1.5s infinite alternate;
+}
+
+/* Modal Animations */
+@keyframes fadeInModal {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scroll Animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow effect animation */
+@keyframes glowEffect {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Responsive Design */
