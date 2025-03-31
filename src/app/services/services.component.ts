@@ -56,8 +56,8 @@ export class ServicesComponent implements OnInit {
           "id": 6, 
           "title": "Quality ansurance",
           "description": "Comprehensive testing services for web and mobile apps.", 
-          "icon": "fas fa-mobile-alt", 
-          "color": "#28a745"
+          "icon": "fas fa-check-circle", 
+          "color": "#6f42c1"
         },
       
     ]

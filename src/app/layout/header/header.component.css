@@ -34,7 +34,7 @@
 
 /* Parallax Hero Section */
 .hero-section {
-    background: url('https://images.pexels.com/photos/1324803/pexels-photo-1324803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+    background: url('https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3MlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -211,29 +211,92 @@
     color: #7886C7;
     transform: scale(1.1);
 }
-
-/* Sidebar Offcanvas */
-.offcanvas {
-    background-color: #A9B5DF;
-}
-
-.offcanvas-title {
+/* Custom Sidebar */
+.custom-sidebar {
+    width: 280px; /* Adjusted for a more compact look */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+    backdrop-filter: blur(15px); /* Glass effect */
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0 15px 15px 0;
+  }
+  
+  /* Sidebar Title */
+  .offcanvas-title {
     font-size: 1.5rem;
     font-weight: bold;
     color: #2D336B;
-}
-
-.offcanvas .nav-link {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+ /* Custom Sidebar - Modern White Theme */
+.custom-sidebar {
+    width: 280px; /* Compact Sidebar */
+    background: rgba(255, 255, 255, 0.95); /* Fully white with slight transparency */
+    backdrop-filter: blur(10px); /* Soft blur effect */
+    border-right: 1px solid rgba(0, 0, 0, 0.1); /* Light border for depth */
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    border-radius: 0 15px 15px 0; /* Rounded right edges */
+  }
+  
+  /* Sidebar Title */
+  .offcanvas-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2D336B;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Close Button */
+  .offcanvas .btn-close {
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .offcanvas .btn-close:hover {
+    opacity: 1;
+  }
+  
+  /* Navigation Links */
+  .offcanvas .nav-link {
     color: #2D336B;
     font-size: 1.2rem;
-    padding: 10px 15px;
-}
-
-.offcanvas .nav-link:hover {
-    color: #7886C7;
-}
-
-
-.navbar-toggler{
-    background-color: #2D336B;
-}
+    font-weight: 500;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .offcanvas .nav-link i {
+    font-size: 1.4rem;
+    color: #666;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .offcanvas .nav-link:hover {
+    background: rgba(0, 0, 0, 0.05); /* Subtle gray background */
+    color: #000;
+  }
+  
+  .offcanvas .nav-link:hover i {
+    transform: translateX(5px);
+    color: #000;
+  }
+  
+  /* Active Link */
+  .offcanvas .nav-link.active {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .navbar-toggler{
+    color: rgb(0 0 0) !important;
+    background-color: #252627 !important;
+  }
